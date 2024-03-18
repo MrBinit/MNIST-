@@ -1,0 +1,29 @@
+val_accuracy: 0.8838333487510681
+
+Best val_accuracy So Far: 0.9006666541099548
+Total elapsed time: 00h 09m 04s
+Best number of hidden layers: 6
+Best number of neurons per layer: 239
+Best activation function: relu
+Best optimizer: nadam
+Best dropout rate: 0.026181799425472163
+
+
+
+
+
+with epochs 20 
+loss: 0.2062 - accuracy: 0.9222 - val_loss: 0.2874 - val_accuracy: 0.9002
+
+from 
+with epochs 50 
+loss: 0.0926 - accuracy: 0.9649 - val_loss: 0.4002 - val_accuracy: 0.9045
+
+
+epoch 100
+
+Epoch 22/100
+1688/1688 [==============================] - 4s 2ms/step - loss: 0.1789 - accuracy: 0.9322 - val_loss: 0.2893 - val_accuracy: 0.9013
+
+Epoch 100/100
+1688/1688 [==============================] - 4s 2ms/step - loss: 0.0450 - accuracy: 0.9838 - val_loss: 0.4994 - val_accuracy: 0.9000
