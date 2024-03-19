@@ -1,3 +1,44 @@
+the dataset is from tf.dataset.fashion_mnist. The dataset will be spitted into train and test and stratified by y_train. 
+
+
+this is the size of the dataset. 
+X_train shape: (54000, 28, 28)
+y_train shape: (54000,)
+X_valid shape: (6000, 28, 28)
+y_valid shape: (6000,)
+X_test shape: (10000, 28, 28)
+y_test shape: (10000,)
+
+
+there is 10 unique classes. So, 10 class label are 'T-shirt/top', 'Trouser', 'Pullover', 'Dress', 'Coat', 
+                'Sandal', 'Shirt', 'Sneaker', 'Bag', 'Ankle boot'. 
+
+
+preprocessing 
+the data will be divided by divided by 255. in order to normalize the data
+
+keras_tuner
+in this project, we will use sequential API to develop the model 
+
+the option of activation we will use are relu and tanh 
+and the optimizer we will provide are "sgd" and "adam"
+
+
+Regularization used:
+earlystopping (patience = 5) 
+Dropout 
+decay(weight) which prevent overfitting as it penalize large weight
+
+
+Output layer
+layer = 10 (as we have 10 unique class classes)
+activation = softmax
+
+Compile:
+
+
+
+Best parameters for MLP. 
 val_accuracy: 0.8838333487510681
 
 Best val_accuracy So Far: 0.9006666541099548
@@ -27,3 +68,37 @@ Epoch 22/100
 
 Epoch 100/100
 1688/1688 [==============================] - 4s 2ms/step - loss: 0.0450 - accuracy: 0.9838 - val_loss: 0.4994 - val_accuracy: 0.9000
+
+
+
+final selected model 
+Epoch 20/20
+1688/1688 [==============================] - 2s 1ms/step - loss: 0.2006 - accuracy: 0.9242 - val_loss: 0.2626 - val_accuracy: 0.9055
+
+313/313 [==============================] - 0s 533us/step - loss: 0.3074 - accuracy: 0.8950
+Test Loss: 0.30740606784820557
+Test Accuracy: 0.8949999809265137
+
+
+Didn't choose more epochs than 20 as the model was overfitting. there was increase in train accuracy but the accuracy was low for test and validation dataset. 
+
+
+
+this is the confusion matrix, 
+313/313 [==============================] - 0s 372us/step
+Confusion Matrix:
+[[841   2  17  33   3   0  96   0   8   0]
+ [  4 964   1  23   4   0   3   0   1   0]
+ [ 13   0 793  14 113   0  66   0   1   0]
+ [ 29   7   8 887  32   1  30   0   6   0]
+ [  0   0  84  32 820   0  60   0   4   0]
+ [  0   0   0   1   0 949   0  34   2  14]
+ [138   2 107  34  81   0 625   0  13   0]
+ [  0   0   0   0   0  27   0 946   0  27]
+ [  5   0   5   7   7   2   5   5 964   0]
+ [  0   0   0   0   0   6   1  40   0 953]]
+
+The precision and recall score of the model. 
+Precision: 0.8735931967037238
+Recall: 0.8741999999999999
+
